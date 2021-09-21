@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "6c017e03-9f7a-4c21-964b-e3d4508eceb8",
+		"name": "google collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var name = \"postman\";\r",
+							"console.log(\"successful pre request\");\r",
+							"\r",
+							"pm.variables.set(\"name\", \"postman\");\r",
+							"console.log(\"name\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"console.log(\"hello\");\r",
+							"\r",
+							"let urlval = pm.variables.get(\"url\");\r",
+							"console.log(\"value of url value: \"+urlval);\r",
+							"\r",
+							"pm.variables.set(\"name\", \"postmam\");\r",
+							"console.log(pm.variables.get(\"name\"));\r",
+							"\r",
+							"let globalVar = pm.globals.get(\"Env\");\r",
+							"console.log(\"globalVar\");\r",
+							"\r",
+							"postman.setNextRequest(\"New User\");\r",
+							"\r",
+							"var schema = {\r",
+							"    \"$schema\": \"http://json-schema.org/draft-07/schema\",\r",
+							"    \"$id\": \"http://example.com/example.json\",\r",
+							"    \"type\": \"object\",\r",
+							"    \"title\": \"The root schema\",\r",
+							"    \"description\": \"The root schema comprises the entire JSON document.\",\r",
+							"    \"default\": {},\r",
+							"    \"examples\": [\r",
+							"        {\r",
+							"            \"data\": {\r",
+							"                \"id\": 2,\r",
+							"                \"email\": \"janet.weaver@reqres.in\",\r",
+							"                \"first_name\": \"Janet\",\r",
+							"                \"last_name\": \"Weaver\",\r",
+							"                \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\r",
+							"            }\r",
+							"        }\r",
+							"    ],\r",
+							"    \"required\": [\r",
+							"        \"data\"\r",
+							"    ],\r",
+							"    \"properties\": {\r",
+							"        \"data\": {\r",
+							"            \"$id\": \"#/properties/data\",\r",
+							"            \"type\": \"object\",\r",
+							"            \"title\": \"The data schema\",\r",
+							"            \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"            \"default\": {},\r",
+							"            \"examples\": [\r",
+							"                {\r",
+							"                    \"id\": 2,\r",
+							"                    \"email\": \"janet.weaver@reqres.in\",\r",
+							"                    \"first_name\": \"Janet\",\r",
+							"                    \"last_name\": \"Weaver\",\r",
+							"                    \"avatar\": \"https://reqres.in/img/faces/2-image.jpg\"\r",
+							"                }\r",
+							"            ],\r",
+							"            \"required\": [\r",
+							"                \"id\",\r",
+							"                \"email\",\r",
+							"                \"first_name\",\r",
+							"                \"last_name\",\r",
+							"                \"avatar\"\r",
+							"            ],\r",
+							"            \"properties\": {\r",
+							"                \"id\": {\r",
+							"                    \"$id\": \"#/properties/data/properties/id\",\r",
+							"                    \"type\": \"number\",\r",
+							"                    \"title\": \"The id schema\",\r",
+							"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"                    \"default\": 0,\r",
+							"                    \"examples\": [\r",
+							"                        2\r",
+							"                    ]\r",
+							"                },\r",
+							"                \"email\": {\r",
+							"                    \"$id\": \"#/properties/data/properties/email\",\r",
+							"                    \"type\": \"string\",\r",
+							"                    \"title\": \"The email schema\",\r",
+							"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"                    \"default\": \"\",\r",
+							"                    \"examples\": [\r",
+							"                        \"janet.weaver@reqres.in\"\r",
+							"                    ]\r",
+							"                },\r",
+							"                \"first_name\": {\r",
+							"                    \"$id\": \"#/properties/data/properties/first_name\",\r",
+							"                    \"type\": \"string\",\r",
+							"                    \"title\": \"The first_name schema\",\r",
+							"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"                    \"default\": \"\",\r",
+							"                    \"examples\": [\r",
+							"                        \"Janet\"\r",
+							"                    ]\r",
+							"                },\r",
+							"                \"last_name\": {\r",
+							"                    \"$id\": \"#/properties/data/properties/last_name\",\r",
+							"                    \"type\": \"string\",\r",
+							"                    \"title\": \"The last_name schema\",\r",
+							"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"                    \"default\": \"\",\r",
+							"                    \"examples\": [\r",
+							"                        \"Weaver\"\r",
+							"                    ]\r",
+							"                },\r",
+							"                \"avatar\": {\r",
+							"                    \"$id\": \"#/properties/data/properties/avatar\",\r",
+							"                    \"type\": \"string\",\r",
+							"                    \"title\": \"The avatar schema\",\r",
+							"                    \"description\": \"An explanation about the purpose of this instance.\",\r",
+							"                    \"default\": \"\",\r",
+							"                    \"examples\": [\r",
+							"                        \"https://reqres.in/img/faces/2-image.jpg\"\r",
+							"                    ]\r",
+							"                }\r",
+							"            },\r",
+							"            \"additionalProperties\": true\r",
+							"        }\r",
+							"    },\r",
+							"    \"additionalProperties\": true\r",
+							"};\r",
+							"\r",
+							"pm.test('Schema is valid', function () {\r",
+							"\r",
+							"var result=tv4.validateResult(pm.response.json(), schema);\r",
+							"if(!result.valid){\r",
+							"    console.log(result);\r",
+							"}\r",
+							"    pm.expect(result.valid).to.be.true;\r",
+							"    \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"postman.setNextRequest(\"Delete User\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"{{$randomFullName}}\",\r\n    \"job\": \"{{$randomJobTitle}}\",\r\n    \"id\":\"240\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/users/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://reqres.in/api/users",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/api/users",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Thu, 24 Jun 2021 10:51:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "84"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"54-nhLStBbsVXqf9NQ2p6aTn8AWTDM\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "cf-request-id",
+							"value": "0adf3e11ef0000de398a28d000000001"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v2?s=ZjrsTwu0pED4p00Jfyxe1PW1vfxzLB0YZosJ%2Fi5NMRgYhOks6OJ4PvwHHxdNsvjN5CtD7gW3xC9VRGTOZhDRo5svEhYWhXMhCg0DrFr1fZv9ABpMbcSJ\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "664565fcbc24de39-BOM"
+						},
+						{
+							"key": "alt-svc",
+							"value": "h3-27=\":443\"; ma=86400, h3-28=\":443\"; ma=86400, h3-29=\":443\"; ma=86400, h3=\":443\"; ma=86400"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"morpheus\",\n    \"job\": \"leader\",\n    \"id\": \"585\",\n    \"createdAt\": \"2021-06-24T10:51:00.308Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "240 get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://reqres.in/api/users/2?id=240",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "240"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"console.log(pm.variables.get(\"remove id\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/users/240",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"240"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pet store  post",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Your test name\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.globals.set(\"ename\", jsonData.name);\r",
+							"\r",
+							"if(response.category.name == \"ghjk\"){\r",
+							"    postman.setNextRequest(\"upload image\");}          \r",
+							"else{\r",
+							"   postman.setNextRequest(null);}\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"postman.setNextRequest(\"New Request\");"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var random = \"vijay\" + \"{{$randomInt}}\";\r",
+							"pm.globals.set(\"ename\", \"random\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ename\",\r\n    \"job\": \"leader\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://reqres.in/api/users",
+					"protocol": "https",
+					"host": [
+						"reqres",
+						"in"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"console.log(\"successful pre request\");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
